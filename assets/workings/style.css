@@ -1,0 +1,161 @@
+/* --celeste: #adfffaff;
+--dark-slate-gray: #1a5e63ff;
+--metallic-seaweed: #028090ff;
+--light-yellow: #f7f9dcff;
+--red-violet-crayola: ;
+--oxford-blue: #0b132bff;
+--y-in-mn-blue: #3d528fff;
+--shadow-blue: #6d8bb0ff;
+--copper-crayola: #e88d67ff;
+--honeydew: #eff8e2ff; */
+
+:root{
+    /* variables */
+
+    --fnt-page-title: 'Cinzel Decorative', cursive;
+    --fnt-page-text: 'Petit Formal Script', cursive;
+    --fnt-form-entry: 'Nanum Gothic', sans-serif;
+
+    --clr-background: var(--clr-dark);
+    --clr-page-text: var(--clr-darker);
+
+    --clr-warning: #c64191ff;
+    --clr-highlight: #f7f9dcff;
+
+    --clr-light: #adfffaff;
+    --clr-dark: #6d8bb0ff;
+    --clr-darker: #3d528fff;
+    --clr-darkest:#0b132bff;
+    --clr-contrast: #e88d67ff;
+}
+
+
+    /* reset */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+    font-size: 24px;
+    font-weight: 400;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+/* End of reset */
+
+
+
+
+
+.today{
+    background-color: yellow;
+}
+
+/* ? .container >.row >.col-md-12 */
+
+/* ?  >center>h2 */
+/* ? >table.table.table-bordered>tbody> */
+/* ?  tr>th */
+/* ?  tr>td>h4 */
+
+
+
+
+
+
+
+
+container{
+    width: 100%;
+}
+
+.row{
+    width: 100%
+}
+
+
+.col-md-12{
+    position:relative;
+    min-height:1px;
+    padding-right:15px;
+    padding-left:15px;
+    width: auto;
+}
+
+center{
+    align-items:center;
+}
+
+h2{
+    font-size:2rem;
+    font-family: var(--fnt-page-title);
+    margin: 1rem;
+}
+
+table{
+    width: clamp(85%,95%,100%);
+    line-height:1.42857143;
+    vertical-align:top;
+}
+
+.table{
+    background-color: #fff;
+    padding:8px;
+}
+
+.table-bordered{
+    border: 1px solid gray;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* .tbody{
+
+
+} */
+
+.tr{
+    width: 100%;
+    border: 1px solid gray;
+}
+
+
+.th{
+    font-family: var(--fnt-page-title);}
+
+.td{ 
+    width: 18%;
+    margin: 0.5rem 1.5rem 0.75rem;
+    padding: 0.25rem 1rem 1.5rem;
+    border: 1px solid gray;
+}
+
+h4{
+    font-family: var(--fnt-page-title);
+    border: 1px solid gray;
+}
+
+footer{
+    font-family: var(--fnt-page-title);
+
+   
+}
+
+
+
+
