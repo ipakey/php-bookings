@@ -10,7 +10,17 @@ function build_calendar($month,$year){
     $dayOfWeek = $dateComponenets['wday'];
     $dateToday = date('Y-m-d');
     $calendar = "<table class='table table-bordered'>";
-    $calendar.= "<center><h2 class='header'>$monthName $year</h2></center>";
+    $calendar.= "<center><h2 class='header'>$monthName $year</h2>";
+
+    $calendar.="<a class='btn btn-xs btn-primary' href='?month=".date('m',mktime(0,0,0,$month-1,1,$year))."&year=".date('Y',mktime(0,0,0,$month-1,1,$year))."'>Previous Month</a>"; 
+    
+
+    $calendar.=" <a class='btn btn-xs btn-primary' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a> ";
+    
+
+    $calendar.="<a class='btn btn-xs btn-primary' href='?month=".date('m',mktime(0,0,0,$month+1,1,$year))."&year=".date('Y',mktime(0,0,0,$month+1,1,$year))."'>Next Month</a></center><br>";
+   
+
     $calendar.= "<tr>";
 
     foreach($daysOfWeek as $day){
@@ -40,14 +50,17 @@ while($currentDay <= $numberDays){
 
     $currentDayRel = str_pad($currentDay,2,"0",STR_PAD_LEFT);
     $date = "$year-$month-$currentDayRel";
-   
-    if($dateToday==$date){
-        $calendar.="<td class='today'><h4>$currentDay</h4>";
-       
 
+    $dayName = strtolower(date('l',strtotime($date)));
+    $eventNum=0;
+
+    $today = $date==date('Y-m-d')?"today":"";
+    if($date<date('Y-m-d')){
+        $calendar.="<td><h4>$currentDay</h4><button class='btn-danger btn-xs btn'>N/A</button>";
     }else{
-        $calendar.="<td><h4>$currentDay</h4>";
+        $calendar.="<td class='$today'><h4>$currentDay</h4><a class='btn btn-success btn-xs'>Book</a>";
     }
+   
     $calendar.="</td>";
 
     //  increment the counters
@@ -84,11 +97,9 @@ echo $calendar;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Nanum+Gothic&family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <!-- Styles -->
-    
+    <link rel="icon" type="image/x-icon" href="assets/branding/favicon.ico">
     <link rel="stylesheet" href="assets/workings/style.css">
-    
-
-    <title>Yfke</title>
+    <title>Yfke Diary</title>
 </head>
 <body>
 <div class="container">
@@ -105,7 +116,7 @@ echo $calendar;
 </div>
     <footer>
         <p>&copy;
-            <img src="./assets/branding/simple-fav-small.jpg" alt="Yfkes logo" style="width: 70px">
+            <img class="footer" src="./assets/branding/simple-fav-small.jpg" alt="Yfkes logo" style="width: 70px">
             <script src="./assets/workings/script.js"></script>
         </p>
     </footer>

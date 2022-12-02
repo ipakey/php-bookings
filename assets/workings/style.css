@@ -20,6 +20,7 @@
     --clr-page-text: var(--clr-darker);
 
     --clr-warning: #c64191ff;
+    --clr-success:#028090;
     --clr-highlight: #f7f9dcff;
 
     --clr-light: #adfffaff;
@@ -67,9 +68,12 @@ ol, ul {
 /* ? .container >.row >.col-md-12 */
 
 /* ?  >center>h2 */
+/* ? btn btn-xs btn-primary */
 /* ? >table.table.table-bordered>tbody> */
 /* ?  tr>th */
 /* ?  tr>td>h4 */
+/* ? btn btn-xs btn-primary */
+/* ? footer */
 
 
 
@@ -150,10 +154,54 @@ h4{
     border: 1px solid gray;
 }
 
+.btn{
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    margin:0.25rem;
+    vertical-align:middle;
+}
+
+a:after .button:hover{
+    opacity: 1;
+    right: 0;
+  }
+
+.btn-xs{
+    border: 2px solid var(--clr-darkest);
+}
+
+.btn-primary{
+    transition-duration: 0.4s;
+    background-color: var(--clr-light);
+    color: var(--clr-darker);
+}
+
+.btn-danger{
+    background-color: var(--clr-warning);
+}
+
+.btn-success{
+    transition-duration: 0.4s;
+    background-color: var(--clr-success);
+}
+
+
+.btn:hover {
+    background-color: var(--clr-darkest);
+    color: var(--clr-light);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
 footer{
     font-family: var(--fnt-page-title);
+    background-color: var(--clr-highlight);
+    text-align:right;
+    margin: 1rem auto 1rem;
+}
 
-   
+.footer{
+    background-color: var(--clr-warning);
+    padding: .25rem;
 }
 
 
