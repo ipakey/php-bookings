@@ -70,7 +70,7 @@ ol, ul {
 /* ?  >center>h2 */
 /* ? btn btn-xs btn-primary */
 /* ? >table.table.table-bordered>tbody> */
-/* ?  tr>th */
+/* ?  tr>th day-header*/
 /* ?  tr>td>h4 */
 /* ? btn btn-xs btn-primary */
 /* ? footer */
@@ -127,6 +127,13 @@ table{
     justify-content: center;
 }
 
+.day-header{
+    font-family: var(--fnt-page-title);
+    font-weight: 200;
+    color: var(--clr-darkest);
+    background-color: #fff;
+}
+
 
 /* .tbody{
 
@@ -150,8 +157,14 @@ table{
 }
 
 h4{
-    font-family: var(--fnt-page-title);
+    font-family: var(--fnt-page-text);
     border: 1px solid gray;
+}
+
+button a{
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
 }
 
 .btn{
@@ -168,6 +181,7 @@ a:after .button:hover{
 
 .btn-xs{
     border: 2px solid var(--clr-darkest);
+    font-family: var(--fnt-form-entry);
 }
 
 .btn-primary{

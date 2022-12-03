@@ -56,9 +56,9 @@ while($currentDay <= $numberDays){
 
     $today = $date==date('Y-m-d')?"today":"";
     if($date<date('Y-m-d')){
-        $calendar.="<td><h4>$currentDay</h4><button class='btn-danger btn-xs btn'>N/A</button>";
+        $calendar.="<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs '>N/A</button>";
     }else{
-        $calendar.="<td class='$today'><h4>$currentDay</h4><a class='btn btn-success btn-xs'>Book</a>";
+        $calendar.="<td class='$today'><h4>$currentDay</h4><button class='btn btn-success btn-xs'><a href='book.php?date=".$date."'>Book</a></button>";
     }
    
     $calendar.="</td>";
