@@ -1,5 +1,19 @@
 <?php
 function build_calendar($month,$year){
+    $mysqli = new mysqli('localhost','root','','bookingcalendar');
+    // $stmt = $mysqli->prepare("select * from bookings where MONTH(date)=? AND YEAR(date)=?");
+    // $stmt->bind_param('ss',$month,$year);
+    // $bookings = array();
+    // if($stmt->execute()){
+    //     $result = $stmt->get_result();
+    //     if($result->num_rows>0){
+    //         while($row = $result->fetch_assoc()){
+    //             $bookings[] = $row['date'];
+    //         }
+    //         $stmt->close();
+    //     }
+    // }
+
     //create array for days of week
     $daysOfWeek = array('Monday','Tuesday','Wednesday','Thusday','Friday','Saturday','Sunday');
     //get the month information from argument
@@ -56,10 +70,12 @@ while($currentDay <= $numberDays){
 
     $today = $date==date('Y-m-d')?"today":"";
     if($date<date('Y-m-d')){
-        $calendar.="<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs '>N/A</button>";
-    }else{
-        $calendar.="<td class='$today'><h4>$currentDay</h4><button class='btn btn-success btn-xs'><a href='book.php?date=".$date."'>Book</a></button>";
+        $calendar.="<td><button>$currentDay</h4><button class='btn btn-danger btn-xs '>N/A</button>";
     }
+    
+    // else{
+    //     $calendar.="<td class='$today'><h4>$currentDay</h4><button class='btn btn-success btn-xs'><a href='book.php?date=".$date."'>Book</a></button>";
+    // }
    
     $calendar.="</td>";
 
@@ -107,8 +123,14 @@ echo $calendar;
         <div class="col-md-12">
             <?php   
                 $dateComponenets = getdate();
+                if(isset($_GET['month']) && isset($_GET['year'])){
+                    $month = $_GET['month'];
+                    $year = $_GET['year'];
+                }
+                else{
                 $month = $dateComponenets['mon'];
                 $year = $dateComponenets['year'];
+                }
                 echo build_calendar($month, $year);
             ?>
         </div>
