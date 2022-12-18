@@ -63,7 +63,7 @@ return $slots;
         foreach($timeslots as $ts){
         ?>
         <div class="col-md-2">
-            <button class="btn btn-success book" data-timeslot="<?php echo $ts; ?>"><?php echo $ts; ?>
+            <button class="btn btn-success book" data-target="modalBkTs" data-timeslot="<?php echo $ts; ?>"><?php echo $ts; ?>
             </button>
         </div>
 
@@ -73,8 +73,10 @@ return $slots;
     </main>
 
     <!-- The Modal -->
-<div class="modal" id="myModal">
+<div class="modal fade" role="dialog" id="modalBkTs">
   <div class="modal-dialog">
+   
+  <!-- Modal Content -->
     <div class="modal-content">
 
       <!-- Modal Header -->
@@ -94,11 +96,11 @@ return $slots;
                     </div> 
                     <div class="form-group">
                         <label for="">Name</label> 
-                        <input required type="text" readonly name="name" id='name' class="form-group">
+                        <input required type="text" name="name" id='name' class="form-group">
                     </div> 
                     <div class="form-group">
                         <label for="">Email</label> 
-                        <input required type="text" readonly name="email" id='email' class="form-group">
+                        <input required type="text" name="email" id='email' class="form-group">
                     </div> 
                 </form>
             </div>
@@ -115,13 +117,15 @@ return $slots;
 </div>
 
 <script>
-    $(".book").click(function(){
-        var timeslot = $(this).attr('data-timeslot');
-        $("#slot").html(timeslot);
-        $("#timeslot").val(timeslot);
-        $("#myModal").modal("show");
-    })
+    $appendTo('.book').click(function(){
+    var timeslots = $(this).attr('data-timeslot');
+    $("#slot").html(timeslots);
+    $("#timeslot").val(timeslots);
+    $("#modalBkTs").modal("show");
+    });
+
 </script> 
+
     <footer>
         <p>&copy;
             <img src="./assets/branding/simple-fav-small.jpg" alt="Yfkes logo" style="width: 70px">

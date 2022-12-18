@@ -71,9 +71,9 @@ while($currentDay <= $numberDays){
     $today=$date==date('Y-m-d')?'today':'';
     if($date<date('Y-m-d')){
         $calendar.="<td class='past'><h4>$currentDayRel </h4><a class='btn btn-optionGone btn-xs'>N/a</a>";
-    }else{
-        $calendar.="<td class='$today'><h4>$currentDayRel</h4>
-        <a href='book.php?date=".$date."' class='btn btn-success btn-xs'>Book</a></td>";
+    }else
+    {
+        $calendar.="<td class='$today'><h4>$currentDayRel</h4><a href='book.php?date=".$date."' class='btn btn-success btn-xs'>Book</a></td>";
     }
 
     //  increment the counters
